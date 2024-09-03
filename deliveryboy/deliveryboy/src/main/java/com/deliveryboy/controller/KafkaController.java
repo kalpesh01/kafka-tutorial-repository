@@ -20,7 +20,7 @@ public class KafkaController {
     @GetMapping("/update")
     public ResponseEntity<?> updateLocation(){
         kafkaService.updateLocation("("+Math.round(Math.random() * 100)+","+Math.round(Math.random() * 100)+")");
-
+        System.out.println("update method called at producer");
         return new ResponseEntity<>(Map.of("Message","Location updates successfully"), HttpStatus.OK);
     }
 }
